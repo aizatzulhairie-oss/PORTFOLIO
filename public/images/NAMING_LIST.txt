@@ -1,0 +1,107 @@
+====================================================================
+ZERO CODE IMAGE UPLOAD LIST — AIZAT ZUL HAIRIE PORTFOLIO
+====================================================================
+
+You DO NOT need to write or edit any code!
+Simply upload your image file to the corresponding folder on GitHub
+using ANY of the simple filenames listed below. The website will
+automatically find it and display it!
+
+Supported file formats: .jpg, .png, .jpeg, .webp, .svg
+
+--------------------------------------------------------------------
+FOLDER: public/images/profile/
+--------------------------------------------------------------------
+- Profile Picture:          profile.jpg (or profile.png, aizat.jpg)
+
+--------------------------------------------------------------------
+FOLDER: public/images/logos/
+--------------------------------------------------------------------
+- UTM Logo:                 utm.png (or utm.jpg)
+- KMKPH Logo:               kmkph.png (or kmkph.jpg)
+- SMTT / TEKTRA Logo:       smtt.png (or tektra.png)
+- Microsoft Power BI:       powerbi.png
+- Quality Control Icon:     qc.png
+- Welding Inspection Icon:  welding_inspection.png
+- AutoCAD Mechanical:       autocad.png
+- NDT Icon:                 ndt.png
+- Insulet Logo:             insulet.png
+- Kolej Vokasional Logo:    kolej_vokasional.png
+- Yayasan Bank Rakyat Logo: bank_rakyat.png
+- PLUS Malaysia Logo:       plus.png
+- Kolej 10 UTM Logo:        kolej_10.png
+- PERMATA UTM Logo:         permata_logo.png
+- SOLIDWORKS Logo:          solidworks.png
+- Arena PLM Logo:           arena.png
+- Python Logo:              python.png
+- Apache Spark Logo:        spark.png
+- dbt Logo:                 dbt.png
+- Apache Airflow Logo:      airflow.png
+- Microsoft Excel Logo:     excel.png
+- HTML / CSS Logo:          html_css.png
+
+--------------------------------------------------------------------
+FOLDER: public/images/education/
+--------------------------------------------------------------------
+- UTM Education Photo:      utm.jpg (or utm_student.jpg)
+- KMKPH Education Photo:    kmkph.jpg (or kmkph_student.jpg)
+- SMTT Education Photo:     smtt.jpg (or smtt_student.jpg)
+- Endowment Merdeka Cert:   cert_merdeka.jpg
+- Director's Award Cert:    cert_director.jpg
+- Excellent Students SPM:   cert_spm.jpg
+- International Cocurr:     cert_intl.jpg
+- Malaysia Young Scientist: cert_scientist.jpg
+
+--------------------------------------------------------------------
+FOLDER: public/images/internships/
+--------------------------------------------------------------------
+- Insulet Photo 1:          insulet_1.jpg
+- Insulet Photo 2:          insulet_2.jpg
+- Insulet Photo 3:          insulet_3.jpg
+- Welding Instructor 1:     welding_1.jpg
+- Welding Instructor 2:     welding_2.jpg
+- Welding Instructor 3:     welding_3.jpg
+
+--------------------------------------------------------------------
+FOLDER: public/images/certifications/
+--------------------------------------------------------------------
+- Siemens Logo:             siemens.png
+- MyDIGITAL Logo:           mydigital.png
+- Google PM Logo:           google_pm.png
+- Insulet Arena Logo:       insulet_arena.png
+- Google Data Analytics:    google_data.png
+- UTM Cloud Computing:      utm_cloud.png
+- L&T EduTech Welding:      lt_welding.png
+- CIDB 3G Welder Logo:      cidb.png
+- Augmintech NDT Logo:      augmintech.png
+- L&T Heavy Manufacturing:  lt_heavy.png
+- Microsoft Data Modeling:  ms_datamodel.png
+- Microsoft ETL:            ms_etl.png
+- Microsoft Harnessing:     ms_harnessing.png
+- Microsoft Excel Analysis: ms_excel.png
+- Board Infinity Logo:      board_infinity.png
+- Kennesaw State Univ Logo: kennesaw.png
+- Rice University Logo:     rice.png
+
+--------------------------------------------------------------------
+FOLDER: public/images/volunteering/
+--------------------------------------------------------------------
+- FEST Johor Photo:         fest_johor.jpg
+- Hari Komuniti 2026 Photo: hari_komuniti.jpg
+- International Exchange:   intl_exchange.jpg
+- UTM Games Rugby Photo:    utm_games.jpg
+- PERMATA UTM EXCO Photo:   permata.jpg
+
+--------------------------------------------------------------------
+FOLDER: public/images/projects/
+--------------------------------------------------------------------
+- Piping Drawings:          piping.jpg
+- Porosity Defect ML:       porosity_ml.jpg (or porosity.jpg)
+- Gas Welding Lab:          gas_welding.jpg
+- Six Sigma Yellow Belt:    six_sigma.jpg
+- Arc Welding Jigs:         welding_jigs.jpg
+- NYC Yellow Taxi Pipeline: taxi_pipeline.jpg
+- Welding QA/QC Dashboard:  welding_dashboard.jpg
+- MiraBrush Project:        mirabrush.jpg
+- EDU TEKTRA Mobile Apps:   edu_tektra.jpg
+====================================================================

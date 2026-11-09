@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { usePortfolioImages } from '../context/ImageContext';
+import { autoImageNames } from '../data/autoImagePaths';
 import { Award, Building2 } from 'lucide-react';
 
 interface ImagePlaceholderProps {
@@ -11,6 +12,8 @@ interface ImagePlaceholderProps {
   fit?: 'cover' | 'contain';
   compact?: boolean;
 }
+
+const EXTENSIONS = ['jpg', 'png', 'jpeg', 'webp', 'svg'];
 
 export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
   id,
@@ -24,7 +27,6 @@ export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
   const { images } = usePortfolioImages();
 
   const item = images[id];
-  const src = item?.src;
   const placeholderType = item?.type || type;
   const placeholderText =
     customPlaceholderText ||
@@ -38,6 +40,55 @@ export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
       : 'INSERT PHOTO HERE');
 
   const finalFit = fit || item?.fit || (placeholderType === 'logo' ? 'contain' : 'cover');
+
+  // Compute candidate paths automatically
+  const candidates: string[] = [];
+  if (item?.src && item.src.trim() !== '') {
+    candidates.push(item.src);
+  }
+
+  const autoConfig = autoImageNames[id];
+  if (autoConfig) {
+    for (const name of autoConfig.names) {
+      for (const ext of EXTENSIONS) {
+        candidates.push(`/images/${autoConfig.folder}/${name}.${ext}`);
+      }
+    }
+  }
+
+  // Also add direct ID candidates as fallback
+  for (const ext of EXTENSIONS) {
+    const folder =
+      placeholderType === 'logo'
+        ? 'logos'
+        : placeholderType === 'certificate'
+        ? 'education'
+        : placeholderType === 'project'
+        ? 'projects'
+        : 'profile';
+    const fallbackPath = `/images/${folder}/${id}.${ext}`;
+    if (!candidates.includes(fallbackPath)) {
+      candidates.push(fallbackPath);
+    }
+  }
+
+  const [candidateIndex, setCandidateIndex] = useState<number>(0);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [allFailed, setAllFailed] = useState<boolean>(candidates.length === 0);
+
+  const handleImageError = () => {
+    if (candidateIndex < candidates.length - 1) {
+      setCandidateIndex((prev) => prev + 1);
+    } else {
+      setAllFailed(true);
+    }
+  };
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
+
+  const currentPath = candidates[candidateIndex];
 
   const getIcon = () => {
     if (placeholderType === 'certificate') {
@@ -73,16 +124,23 @@ export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
         aspectRatio || item?.aspectRatio || 'aspect-[4/3]'
       } ${className}`}
     >
-      {src ? (
+      {/* Hidden/Active Image element trying automatic candidate paths */}
+      {!allFailed && currentPath && (
         <img
-          src={src}
+          key={currentPath}
+          src={currentPath}
           alt={item?.label || id}
+          onLoad={handleImageLoad}
+          onError={handleImageError}
           className={`w-full h-full ${
             finalFit === 'contain' ? 'object-contain p-2' : 'object-cover'
-          }`}
+          } ${isLoaded ? 'block' : 'hidden'}`}
           loading="lazy"
         />
-      ) : (
+      )}
+
+      {/* Render placeholder whenever no image has successfully loaded */}
+      {(!isLoaded || allFailed) && (
         <div className="flex flex-col items-center justify-center p-2 text-center w-full h-full">
           {getIcon()}
           <span
