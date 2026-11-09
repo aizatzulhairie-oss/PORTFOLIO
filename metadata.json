@@ -1,0 +1,6 @@
+{
+  "name": "Aizat Zul Hairie - Engineering Portfolio",
+  "description": "1:1 Interactive Recreation of Aizat Zul Hairie Bin Wahi's 7-page Engineering Portfolio PDF",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
